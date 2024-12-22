@@ -280,11 +280,7 @@ if __name__ == '__main__':
     # we want to xxx
     args.mag = args.objective // (2 ** args.patch_level)
 
-    if args.task == "camelyon16":
-        args.source = os.path.join(CAMELYON16_DATA_DIR, "WSIs")
-        args.save_dir = os.path.join(CAMELYON16_DATA_DIR, f"extracted_mag{args.mag}x_patch{args.patch_size}")
-        args.preset = os.path.join(PRESET_DIR, "bwh_biopsy.csv")
-    elif args.task == "tcga_nsclc":
+    if args.task == "tcga_nsclc":
         args.source = os.path.join(NSCLC_DATA_DIR, "WSIs")
         args.save_dir = os.path.join(NSCLC_DATA_DIR, f"extracted_mag{args.mag}x_patch{args.patch_size}")
         args.preset = os.path.join(PRESET_DIR, "tcga.csv")
@@ -315,30 +311,6 @@ if __name__ == '__main__':
     elif args.task == "tcga_prad":
         args.source = os.path.join(PRAD_DATA_DIR, "WSIs")
         args.save_dir = os.path.join(PRAD_DATA_DIR, f"extracted_mag{args.mag}x_patch{args.patch_size}")
-        args.preset = os.path.join(PRESET_DIR, "tcga.csv")
-    elif args.task == "tcga_read":
-        args.source = os.path.join(READ_DATA_DIR, "WSIs")
-        args.save_dir = os.path.join(READ_DATA_DIR, f"extracted_mag{args.mag}x_patch{args.patch_size}")
-        args.preset = os.path.join(PRESET_DIR, "tcga.csv")
-    elif args.task == "panda":
-        args.source = os.path.join(PANDA_DATA_DIR, "WSIs")
-        args.save_dir = os.path.join(PANDA_DATA_DIR, f"extracted_mag{args.mag}x_patch{args.patch_size}")
-        args.preset = os.path.join(PRESET_DIR, "bwh_biopsy.csv")
-    elif args.task == "ebrains":
-        args.source = os.path.join(EBRAINS_DATA_DIR, "WSIs")
-        args.save_dir = os.path.join(EBRAINS_DATA_DIR, f"extracted_mag{args.mag}x_patch{args.patch_size}")
-        args.preset = os.path.join(PRESET_DIR, "bwh_biopsy.csv")
-    elif args.task == "tcga_coad":
-        args.source = os.path.join(COAD_DATA_DIR, "WSIs")
-        args.save_dir = os.path.join(COAD_DATA_DIR, f"extracted_mag{args.mag}x_patch{args.patch_size}")
-        args.preset = os.path.join(PRESET_DIR, "tcga.csv")
-    elif args.task == "cptac_rcc":
-        args.source = os.path.join(CPTAC_RCC_DATA_DIR, "WSIs")
-        args.save_dir = os.path.join(CPTAC_RCC_DATA_DIR, f"extracted_mag{args.mag}x_patch{args.patch_size}")
-        args.preset = os.path.join(PRESET_DIR, "tcga.csv")
-    elif args.task == "cptac_brca":
-        args.source = os.path.join(CPTAC_BRCA_DATA_DIR, "WSIs")
-        args.save_dir = os.path.join(CPTAC_BRCA_DATA_DIR, f"extracted_mag{args.mag}x_patch{args.patch_size}")
         args.preset = os.path.join(PRESET_DIR, "tcga.csv")
     else:
         raise NotImplementedError()

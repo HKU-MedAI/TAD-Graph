@@ -123,11 +123,7 @@ args = parser.parse_args()
 
 
 if __name__ == '__main__':
-    if args.task == "camelyon16":
-        args.data_h5_dir = os.path.join(CAMELYON16_DATA_DIR, args.data_h5_dir)
-        args.data_slide_dir = os.path.join(CAMELYON16_DATA_DIR, "WSIs")
-        args.slide_ext = ".tif"
-    elif args.task == "tcga_nsclc":
+    if args.task == "tcga_nsclc":
         args.data_h5_dir = os.path.join(NSCLC_DATA_DIR, args.data_h5_dir)
         args.data_slide_dir = os.path.join(NSCLC_DATA_DIR, "WSIs")
         args.slide_ext = ".svs"
@@ -143,10 +139,6 @@ if __name__ == '__main__':
         args.data_h5_dir = os.path.join(BLCA_DATA_DIR, args.data_h5_dir)
         args.data_slide_dir = os.path.join(BLCA_DATA_DIR, "WSIs")
         args.slide_ext = ".svs"
-    elif args.task == "tcga_ucec":
-        args.data_h5_dir = os.path.join(UCEC_DATA_DIR, args.data_h5_dir)
-        args.data_slide_dir = os.path.join(UCEC_DATA_DIR, "WSIs")
-        args.slide_ext = ".svs"
     elif args.task == "tcga_esca":
         args.data_h5_dir = os.path.join(ESCA_DATA_DIR, args.data_h5_dir)
         args.data_slide_dir = os.path.join(ESCA_DATA_DIR, "WSIs")
@@ -154,30 +146,6 @@ if __name__ == '__main__':
     elif args.task == "tcga_prad":
         args.data_h5_dir = os.path.join(PRAD_DATA_DIR, args.data_h5_dir)
         args.data_slide_dir = os.path.join(PRAD_DATA_DIR, "WSIs")
-        args.slide_ext = ".svs"
-    elif args.task == "tcga_read":
-        args.data_h5_dir = os.path.join(READ_DATA_DIR, args.data_h5_dir)
-        args.data_slide_dir = os.path.join(READ_DATA_DIR, "WSIs")
-        args.slide_ext = ".svs"
-    elif args.task == "panda":
-        args.data_h5_dir = os.path.join(PANDA_DATA_DIR, args.data_h5_dir)
-        args.data_slide_dir = os.path.join(PANDA_DATA_DIR, "WSIs")
-        args.slide_ext = ".tiff"
-    elif args.task == "ebrains":
-        args.data_h5_dir = os.path.join(EBRAINS_DATA_DIR, args.data_h5_dir)
-        args.data_slide_dir = os.path.join(EBRAINS_DATA_DIR, "WSIs")
-        args.slide_ext = ".ndpi"
-    elif args.task == "tcga_coad":
-        args.data_h5_dir = os.path.join(COAD_DATA_DIR, args.data_h5_dir)
-        args.data_slide_dir = os.path.join(COAD_DATA_DIR, "WSIs")
-        args.slide_ext = ".svs"
-    elif args.task == "cptac_rcc":
-        args.data_h5_dir = os.path.join(CPTAC_RCC_DATA_DIR, args.data_h5_dir)
-        args.data_slide_dir = os.path.join(CPTAC_RCC_DATA_DIR, "WSIs")
-        args.slide_ext = ".svs"
-    elif args.task == "cptac_brca":
-        args.data_h5_dir = os.path.join(CPTAC_BRCA_DATA_DIR, args.data_h5_dir)
-        args.data_slide_dir = os.path.join(CPTAC_BRCA_DATA_DIR, "WSIs")
         args.slide_ext = ".svs"
 
     # define feature directory
