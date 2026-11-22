@@ -74,7 +74,7 @@ class DenseGNN(torch.nn.Module):
         z = self.gnn_pool(x, graph_data.batch)
 
         for i in range(self.number_of_layers - 1):
-            x = F.dropout(x, p=0.2)
+            x = F.dropout(x, p=0.2, training=self.training)
             x = self.convs_list[i+1](x=x, edge_index=edge_index, edge_attr=preprocess_edge_attr,
                                      edge_atten=edge_atten)
             x = F.relu(x)
@@ -96,7 +96,7 @@ class DenseGNN(torch.nn.Module):
         else:
             raise NotImplementedError
 
-        x_pool = F.dropout(x_pool, p=0.2)
+        x_pool = F.dropout(x_pool, p=0.2, training=self.training)
 
         return x_pool
 
